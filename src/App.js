@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.scss';
+import VideoList from './components/VideoList/VideoList';
 
 function App() {
   return (
