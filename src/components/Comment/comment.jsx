@@ -1,4 +1,4 @@
-import './CommentCard.scss'
+import './Comment.scss'
 
 // Comment component takes in props and returns JXN for a single comment 
 function Comment(props) {
