@@ -8,7 +8,7 @@ import './NavBar.scss'
 function NavBar({}) {
     return(
         <form className="navbar-form">
-            <div className="navbar-form__input">
+            <div className="navbar-form__container">
                 <img className="navbar-form__search-bar" src={searchBar} alt="search bar" />
                 <label className="navbar-form__label"/>
                 <input className="navbar-form__input"/>

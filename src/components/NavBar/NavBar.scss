@@ -4,5 +4,29 @@
 
 .navbar-form {
     position: relative;
-    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    &__container{
+        @include formfield;
+        position: relative;
+
+        @include tablet {
+            background: none;
+        }
+    }
+
+    &__search-bar {
+        position: absolute;
+        margin-left: 0.5rem;
+        bottom: 50%;
+        transform: traanslateY(50%);
+    }
+    &__input {
+        
+    }
+
+       
+
 }

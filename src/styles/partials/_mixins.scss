@@ -1,4 +1,6 @@
 @use './variables' as *;
+@use './typography' as *;
+@use './colors'as *;
 
 
 @mixin tablet {
@@ -23,4 +25,32 @@
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+@mixin formfield {
+    width: 100%;
+    height: 3rem;
+    border: 0.15rem solid $divider-line;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    background-color: $alternative-text;
+    font-size: $mobile-subHeaderBody-font;
+    font-weight: $regular;
+    line-height: $mobile-subHeaderBody-lineHeight;
+
+    &::placeholder{
+        color: $primary-text-black;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: $primary-text-black;
+    }
+
+    @include tablet {
+        width: 15rem;
+        height: 3rem;
+        padding: 1rem;
+       
+    }
 }
