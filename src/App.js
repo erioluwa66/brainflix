@@ -1,11 +1,11 @@
 import './App.scss';
+import Header from './components/Header/Header';
 import VideoList from './components/VideoList/VideoList';
-import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
    <>
-   <NavBar/>
+   <Header/>
    <VideoList/>
    </>
     
