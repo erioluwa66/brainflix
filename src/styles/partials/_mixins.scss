@@ -1,3 +1,6 @@
+@use './variables' as *;
+
+
 @mixin tablet {
     @media(min-width: $tablet-breakpoint) {
         @content;
@@ -16,6 +19,8 @@
     }
 }
 
-$tablet-breakpoint: 768px;
-$desktop-breakpoint: 1280px;
-$mobile-breakpoint: 320px;
+@mixin reset-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
