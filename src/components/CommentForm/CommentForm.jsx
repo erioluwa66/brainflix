@@ -17,7 +17,7 @@ function CommentForm({handleSubmit}) {
             </div>
             <div>
                 <label htmlFor="comment">JOIN THE CONVERSATION</label>
-                <textarea rows="3" name="comment" placeholder="Add a new comment" />
+                <textarea id="comments" name="comment" placeholder="Add a new comment" />
                 <button >COMMENT</button>
             </div>
 

@@ -1,4 +1,4 @@
-import NavBar from "../../components/NavBar/NavBar"
+import NavBar from "../navbar/navbar";
 import logo from "../../assets/logo/BrainFlix-logo.svg"
 
 import './Header.scss'
