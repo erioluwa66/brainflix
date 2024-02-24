@@ -8,23 +8,22 @@ import './NavBar.scss'
 function NavBar({}) {
     
     return(
-        <form className="navbar-form"> 
-            <div className="navbar-form__container">
-                <img className="navbar-form__search-bar" src={searchBar} alt="search bar" />
-                <label className="navbar-form__label" htmlFor="search"/>
-                <input className="navbar-form__input" type="text" name="search" placeholder="search"/>
+        <form className="navbar"> 
+            <div className="navbar__container">
+                <img className="navbar__search-bar" src={searchBar} alt={searchBar} />
+                <label className="navbar__label" htmlFor="search"/>
+                <input className="navbar__input" type="text" name="search" placeholder="Search"/>
             </div>   
 
-            <button className="navbar-form__upload" type="submit">
-                <img className="navbar-form__upload-box" src={uploadBox} alt="upload box"/>
+            <button className="navbar__upload" type="submit">
+                <img className="navbar__upload-icon" src={uploadBox} alt="upload box"/>
                 UPLOAD
             </button>
 
-            <div className="navbar-form__avatar-container">
-                <img className="navbar-form__avatar" src={profilepic} alt="Mohan muruge"/>
-
+            <div className="navbar__avatar-container">
+                <img className="navbar__avatar" src={profilepic} alt="Mohan muruge"/>
             </div>
         </form>
     )
 }
-export default NavBar;
+export default NavBar
