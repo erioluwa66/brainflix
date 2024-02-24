@@ -1,4 +1,4 @@
-import videos from '../../data/videos.json';
+ import videos from '../../data/videos.json';
 
 
 
@@ -16,13 +16,6 @@ function VideoList({}) {
     </aside>
     )
 }
-
-
-
-
-
-
-
 
 
 
