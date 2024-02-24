@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import Comment from '../Comment/Comment';
 import CommentForm from '../CommentForm/CommentForm';
 import {v4 as uuidv4} from "uuid";
