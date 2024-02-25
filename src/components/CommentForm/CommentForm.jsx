@@ -25,5 +25,5 @@ function CommentForm({handleSubmit}) {
     )
 }
 
-export default CommentForm
+export default CommentForm;
 

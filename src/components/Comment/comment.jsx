@@ -1,19 +1,24 @@
+import CommentCard from '../CommentCard/CommentCard';
+import CommentForm from '../CommentForm/CommentForm';
+
 import './Comment.scss'
 
-// Comment component takes in props and returns JXN for a single comment 
-function Comment(props) {
-    return (
-        <div className="comment">
-            <div className="comment__img"></div>
-            <div className="comment__data">
-                <div className="comment__data-info">
-                    <p className="comment__data-info-name">{props.name}</p>
-                    <p className="comment__data-info-time"></p>
-                </div>
-                <p className="comment__data-comment">{props.comment}</p>
-            </div>
-        </div>
-    )
+function Comment({ selected }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    // Add your form submission logic here if needed
+  }
+
+  return (
+    <section className="comment">
+      <h3 className="comment__title">3 Comments</h3>
+      <CommentForm handleSubmit={handleSubmit} />
+
+      {selected.comments.map(comment => (
+        <CommentCard key={comment.id} commentData={comment} />
+      ))}
+    </section>
+  );
 }
 
-export default Comment
+export default Comment;
