@@ -8,44 +8,42 @@
 .comment {
     &__card {
         @include flex-row;
-        border-bottom: $divider;
-        margin-top: $medium-space;
-        padding-bottom: $regular-space;
+        border-bottom: $mercury;
+        margin-top: 2rem;
+        padding-bottom: 1.5rem;
     }
 
     &__avatar {
         @include avatar;
-        margin-right: $small-space;
+        margin-right: 1rem;
     }
 
     &__body {
         @include flex-row {
             flex-wrap: wrap;
         }
-
         width: 100%;
     }
-
     &__user {
-        font-weight: $weight-demi;
-
+        font-family: "avenir";
+        font-weight: 600;
     }
 
     &__date {
         margin-left: auto;
-        color: $primary-neutral-color;
+        color: $silver;
 
         @include tablet {
-            margin-left: $small-space;
+            margin-left: 1rem;
         }
     }
 
     &__text {
         width: 100%;
-        margin-top: $min-space;
+        margin-top: 0.5rem;
 
         @include desktop {
-            margin-right: $medium-space;
+            margin-right: 2rem;
         }
     }
 }

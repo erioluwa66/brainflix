@@ -1,29 +1,21 @@
-import profilepic from "../../assets/images/Mohan-muruge.jpg"
+import profileImage from "../../assets/images/Mohan-muruge.jpg"
 
 import './CommentForm.scss'
 
-//CommentForm
-function CommentForm({handleSubmit}) {
-
-    const onSubmitHandler = (event) => {
-        event.preventDefault();
-        handleSubmit();
-    };
-
+//comment form 
+const CommentForm = ({handleSubmit}) => {
     return (
-        <form onSubmit={onSubmitHandler}>
-            <div>
-                <img src={profilepic} alt ="Mohan muruge"/>
+        <form className="comment-form" onSubmit={handleSubmit}>
+            <div className="comment-form__avatar-wrapper">
+                <img className="comment-form__avatar" src={profileImage} alt="Mogan muruge"/>
             </div>
-            <div>
-                <label htmlFor="comment">JOIN THE CONVERSATION</label>
-                <textarea id="comments" name="comment" placeholder="Add a new comment" />
-                <button >COMMENT</button>
+            <div className="comment-form__body">
+                <label className="comment-form__text" htmlFor="comment">JOIN THE CONVERSATION</label>
+                <textarea row="3" className="comment-form__input" name="comment" placeholder="Write comment here"/>
+                <button className="comment-form__submit">COMMENT</button>
             </div>
-
         </form>
     )
 }
 
 export default CommentForm;
-

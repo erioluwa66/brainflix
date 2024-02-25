@@ -15,7 +15,7 @@
 
     &__tittle {
         color: $silver;
-        margin: 0rem 0rem 2.5rem 0rem;
+        margin: 0rem 0rem 2.5rem 0.5rem;
         font-size: $mobile-sectionHeader-font;
         line-height: $mobile-sectionHeader-lineHeight;
         @include tablet {
