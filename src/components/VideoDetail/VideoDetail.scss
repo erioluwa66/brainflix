@@ -1,0 +1,80 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+
+.video-detail {
+    &__title {
+        margin-top: 2rem;
+    }
+
+    &__detail {
+        border-bottom: $mercury;
+        margin-top: 1rem;
+        @include tablet {
+            @include flex-row {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    &__subtitle {
+        @include flex-row {
+            align-items: baseline;
+        }
+        margin-bottom: 2rem;
+        @include tablet {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__creator {
+        margin-right: 0.5rem;
+
+        @include tablet {
+            font-size: $normal-sectionHeader-font;
+            line-height: $normal-sectionHeader-lineHeight;
+            font-family: "avenir";
+            font-weight: 600;
+        }
+    }
+
+    &__date {
+        color: $silver;
+   }
+    &__stats-wrapper {
+        @include flex-row {
+            align-items: center;
+        }
+        padding-bottom: 1.5rem;
+
+    }
+
+    &__view-icon,
+    &__like-icon {
+        margin-right: 0.5rem;
+    }
+
+    &__view-num {
+        margin-right: 0.5rem;
+    }
+
+    &__view-num,
+    &__like-num {
+        @include desktop {
+            margin-right: 2rem;
+        }
+    }
+
+    &__text {
+        padding: 1.5rem 0 2.5rem;
+
+        @include tablet {
+            padding: 2.5rem 0 4rem;
+            width: 75%;
+        }
+    }
+}
