@@ -4,7 +4,7 @@ import upload from "../../assets/icons/upload.svg"
 import './Header.scss'
 
 //navbar
-function Header({}) {
+function Header({update}) {
     
     return(
         <header className="header">

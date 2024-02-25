@@ -1,12 +1,12 @@
 import "./VideoListItem.scss";
 
-function VideoListItem( {videoData,  handleClick} ) {
+function VideoListItem( {video,  handleClick} ) {
     return(
         <article className="video-list" onClick={handleClick}>
-          <img className="video-list__image" src={videoData.image} alt={videoData.title}/>
+          <img className="video-list__image" src={video.image} alt={video.title}/>
           <div className="video-list__container">
-            <p className="video-list__title">{videoData.title}</p>
-            <p className="video-list__author">{videoData.channel}</p>
+            <p className="video-list__title">{video.title}</p>
+            <p className="video-list__author">{video.channel}</p>
         </div> 
           
     </article>

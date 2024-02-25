@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import Dataset from '../../data/video-details.json'; // Import your dataset here
+import { useState } from 'react'; 
+import Dataset from '../../data/video-details.json'
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoDetail from '../VideoDetail/VideoDetail';
 import Comment from '../Comment/Comment';
 import VideoList from '../VideoList/VideoList';
 
-function Main() {
-  const [videoData, setVideoData] = useState(Dataset);
+function Main({videoData}) {
+  
   const [selected, setSelected] = useState(Dataset[0]);
 
   const handleClick = (id) => {

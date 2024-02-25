@@ -1,12 +1,16 @@
+import { useState } from 'react';
+import Dataset from './data/video-details.json';
 import './App.scss';
 import Header from './components/Header/Header';
-import CommentCard from './components/CommentCard/CommentCard';
+import Main from './components/Main/Main'
+
 
 function App() {
+  const [videoData, setVideoData] = useState(Dataset);
   return (
    <>
-   <Header/>
-   <CommentCard/>
+   <Header update={setVideoData}/>
+   <Main videoData={videoData}/>
    </>
     
   );

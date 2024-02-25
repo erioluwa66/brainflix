@@ -2,16 +2,16 @@ import VideoListItem from '../VideoListItem/VideoListItem';
 import './VideoList.scss'
 
 
-function VideoList( {videoData, selected, handleClick} ) {
-    return(
-        <aside className="video-list">
+function VideoList( {videos, selected, handleClick} ) {
+    return(    
+       <aside className="video-list">   
         <h2 className="video-list__tittle">NEXT VIDEOS</h2>
-          {videoData.map((video) => {
+          {videos.map((video) => {
             if(video.id !== selected.id){
               return (
                 <VideoListItem
                   key={video.id}
-                  videoData={video}
+                  video={video}
                   handleClick={() => handleClick(video.id)}
                   />
               );
