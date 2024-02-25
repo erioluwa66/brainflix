@@ -1,4 +1,3 @@
-
 import dateConvertor from '../../Utils';
 import ViewIcon from '../../assets/icons/views.svg';
 import LikeIcon from '../../assets/icons/likes.svg';
@@ -10,7 +9,7 @@ function VideoDetail({ selected }) {
             <h1 className="video-detail__title">{selected.title}</h1>
             <article className="video-detail__detail">
                 <div className="video-detail__subtitle">
-                    <h2 className="video-detail__creator">By {selected.channel}</h2>
+                    <h2 className="video-detail__creator">{selected.channel}</h2>
                     <p className="video-detail__date">{dateConvertor(selected.timestamp)}</p>
                 </div>
                 <div className="video-detail__stats-wrapper">

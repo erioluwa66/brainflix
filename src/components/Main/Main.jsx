@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Data from '../../data/video-details.json'; // Import your dataset here
-import VideoPlayer from './VideoPlayer'; // Assuming VideoPlayer, VideoDetail, Comment, and VideoList are components in the same directory
-import VideoD
-import Comment from './Comment';
+import Dataset from '../../data/video-details.json'; // Import your dataset here
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import VideoDetail from '../VideoDetail/VideoDetail';
+import Comment from '../Comment/Comment';
 import VideoList from '../VideoList/VideoList';
 
 function Main() {
-  const [videoData, setVideoData] = useState(Data);
-  const [selected, setSelected] = useState(Data[0]);
+  const [videoData, setVideoData] = useState(Dataset);
+  const [selected, setSelected] = useState(Dataset[0]);
 
   const handleClick = (id) => {
     const newSelected = videoData.find(video => video.id === id);
