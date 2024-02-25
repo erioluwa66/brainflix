@@ -57,6 +57,18 @@
     @content;
 }
 
+@mixin combo-spacing {
+    margin: 0 1rem;
+
+    @include tablet {
+        margin: 0 1.5rem;
+    }
+
+    @include desktop {
+        margin: 0 11.25rem;
+    }
+}
+
 
 @mixin flex-row {
     display: flex;

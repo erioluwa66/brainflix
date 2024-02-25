@@ -1,0 +1,30 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+.main {
+
+    &__body {
+        @include combo-spacing;
+
+        @include desktop {
+            @include flex-row {
+                flex-wrap: wrap;
+            }
+        }
+
+        &-left {
+            @include desktop {
+                width: 70%;
+            }
+        }
+
+        &-right {
+            @include desktop {
+                width: 30%;
+            }
+        }
+    }
+}

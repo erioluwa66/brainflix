@@ -90,17 +90,18 @@
                 line-height: $normal-labelsButton-lineHeight;
                 }
             }
-        }
-        &--logo {
-            position: absolute;
-            bottom: 1.125rem;
-            left: 3.5625rem;
-            @include tablet {
+        
+            &__logo {
+                position: relative;
+                bottom: 2.125rem;
+                left: 1.5625rem;
+                @include tablet {
                 bottom: 1.0625rem;
                 left: .75rem
             }
         }
     }
+}
    
    &__profile {
     @include avatar;
