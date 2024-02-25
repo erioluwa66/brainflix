@@ -30,11 +30,12 @@
 
 @mixin button {
     font-size: $mobile-labelsButton-font;
-    font-weight: $demi;
+    font-weight: 600;
     line-height: $mobile-labelsButton-lineHeight;
     text-align: center;
     height: 2.5rem;
     width: 100%;
+    color: $white;
     border-radius: 0.25rem;
     border-style: none;
     background-color: $brainflix-blue;
