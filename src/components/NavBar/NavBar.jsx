@@ -13,19 +13,19 @@ const NavBar = () => {
     }
 
     return (
-        <form className="search-form" onSubmit={handleSubmit}>
-            <div className="search-form__input-wrapper">
-                <img alt="magnifier" className="search-form__search-icon" src={searchIcon} />
-                <label className="search-form__label" htmlFor="search"></label>
-                <input className="search-form__input" type="text" name="search" placeholder="Search"/>
+        <form className="navbar" onSubmit={handleSubmit}>
+            <div className="navbar__input-container">
+                <img alt="magnifier" className="navbar__search-icon" src={searchIcon} />
+                <label className="navbar__label" htmlFor="search"></label>
+                <input className="navbar__input" type="text" name="search" placeholder="Search"/>
             </div>
             
-                <button className="search-form__submit" type="submit">UPLOAD</button>
-                <img className="search-form__submit-icon" src={uploadIcon} alt="upload icon"/>
+                <button className="navbar__submit" type="submit">UPLOAD</button>
+                <img className="navbar__submit-icon" src={uploadIcon} alt="upload icon"/>
                   
 
-            <div className="search-form__avatar-box">
-                <img className="search-form__avatar" src={profileImage} alt="Mogan muruge"/>
+            <div className="navbar__avatar-box">
+                <img className="navbar__avatar" src={profileImage} alt="Mogan muruge"/>
             </div>
 
         </form>

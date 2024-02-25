@@ -5,33 +5,54 @@
 @use '../../styles/partials/global' as *;
 
 
-.video-detail {
+.video-info {
     &__title {
         margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-family: 'avenir';
+        font-weight: 700;
+        font-size: $mobile-pageheader-font;
+        line-height: $mobile-pageheader-lineHeight;
+        
+        @include tablet {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        font-size: $normal-pageheader-font;
+        line-height: $normal-pageheader-lineHeight;
+        }
     }
 
     &__detail {
-        border-bottom: $mercury;
-        margin-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px $mercury;
+        font-family: 'avenir';
+        font-weight: 400;
+        font-size: $mobile-subHeaderBody-font;
+        line-height: $mobile-subHeaderBody-lineHeight;
+        margin-top: 1rem; 
         @include tablet {
             @include flex-row {
                 flex-wrap: wrap;
                 justify-content: space-between;
-                margin-top: 1.5rem;
+                margin-top: 2rem;
+                font-size: $normal-subHeaderBody-font;
+                line-height: $normal-subHeaderBody-lineHeight;
             }
         }
     }
     &__subtitle {
-        @include flex-row {
-            align-items: baseline;
-        }
+        
         margin-bottom: 2rem;
         @include tablet {
+            @include flex-row {
+                align-items: baseline;
+            }
             margin-bottom: 1.5rem;
         }
     }
 
-    &__creator {
+    &__author {
         margin-right: 0.5rem;
 
         @include tablet {
@@ -78,3 +99,4 @@
         }
     }
 }
+

@@ -112,3 +112,13 @@
 
     }
 }
+.mobile-only {
+    display: inline;
+}
+
+/* CSS for desktop and tablet devices */
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+}

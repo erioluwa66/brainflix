@@ -4,12 +4,12 @@
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/global' as *;
 
-.search-form {
+.navbar {
     position: relative;
     @include flex-row;
     flex-wrap: wrap;
 
-    &__input-wrapper {
+    &__input-container {
         @include formfield;
         border: none;
         background: none;
