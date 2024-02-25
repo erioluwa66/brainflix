@@ -1,3 +1,27 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+.video-list{
+    padding: 2.5rem 0rem 0.5rem;
+
+    @include desktop{
+        border-left: $mercury;
+        padding-left: 0.5rem;
+        height: 100%;
+    }
+
+    &__tittle {
+        color: $silver;
+        margin: 0rem 0rem 2.5rem 0rem;
+        font-size: $mobile-sectionHeader-font;
+        line-height: $mobile-sectionHeader-lineHeight;
+        @include tablet {
+            font-size: $normal-sectionHeader-font;
+            line-height: $normal-sectionHeader-lineHeight;
+        }
+
+    }
+}
