@@ -4,6 +4,7 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import VideoDetail from '../VideoDetail/VideoDetail';
 import Comment from '../Comment/Comment';
 import VideoList from '../VideoList/VideoList';
+import './Main.scss'
 
 function Main({videoData}) {
   

@@ -5,26 +5,24 @@
 @use '../../styles/partials/global' as *;
 
 .main {
-
     &__body {
         @include combo-spacing;
-
         @include desktop {
-            @include flex-row {
-                flex-wrap: wrap;
+            display: flex;
+            flex-direction: row;
             }
-        }
+        
 
-        &-left {
-            @include desktop {
-                width: 70%;
+            &-left {
+                @include desktop {
+                width: 80%;
+                }
             }
-        }
 
-        &-right {
-            @include desktop {
-                width: 30%;
+            &-right {
+                @include desktop {
+                width: 20%;
+             }
             }
         }
-    }
 }
