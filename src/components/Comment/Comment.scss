@@ -7,6 +7,14 @@
 .comment {
    &__title {
         margin-top: -2.9rem;
+        font-family: 'Avenir';
+        font-weight: 700;
+        font-style: $mobile-sectionHeader-font;
+        line-height: $mobile-sectionHeader-lineHeight;
+        @include tablet {
+            font-style: $normal-sectionHeader-font;
+            line-height: $normal-sectionHeader-lineHeight;
+        }
         
     }
 }

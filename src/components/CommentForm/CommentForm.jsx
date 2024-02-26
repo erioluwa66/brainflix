@@ -11,7 +11,7 @@ const CommentForm = ({handleSubmit}) => {
             </div>
             <div className="comment-form__body">
                 <label className="comment-form__text" htmlFor="comment">JOIN THE CONVERSATION</label>
-                <textarea row="3" className="comment-form__input" name="comment" placeholder="Write comment here"/>
+                <textarea row="2" className="comment-form__input" name="comment" placeholder="Add a new comment"/>
                 <button className="comment-form__submit">COMMENT</button>
             </div>
         </form>

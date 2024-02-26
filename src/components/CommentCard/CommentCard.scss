@@ -22,7 +22,10 @@
         @include flex-row {
             flex-wrap: wrap;
         }
-        width: 100%;
+        width: 65%;
+        @include tablet {
+            width: 80%
+        }
     }
     &__user {
         font-family: "avenir";
