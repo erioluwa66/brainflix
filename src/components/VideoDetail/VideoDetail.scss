@@ -32,6 +32,7 @@
         margin-top: 1rem; 
         border-top: 0.5px solid $silver;
         border-bottom: 0.5px solid $silver;
+        
         @include tablet {
             @include flex-row {
                 flex-wrap: wrap;
@@ -70,37 +71,37 @@
     &__date {
         color: $silver;
    }
-    &__stats-wrapper {
+    &__data {
         display: flex;
-        flex-direction: column;
+        padding-bottom: 1.5rem;
         //justify-content: space-between;
         @include tablet {
             @include flex-row {
                 align-items: center;
             }
-            padding-bottom: 1.5rem;
+            padding-bottom: 0rem;
         }
-    }
-
-    &__view-icon,
-    &__like-icon {
-        margin-right: 0.5rem;
-    }
-
-    &__view-num,
-    &__like-num {
-        color: $silver;
-        @include desktop {
+    
+            &-views {
+            color: $silver;
+            @include tablet {
             margin-right: 2rem;
+             }
         }
     }
 
     &__text {
         padding: 1.5rem 0 2.5rem;
-
+        margin-top: -0.5rem;
+        font-family: 'avenir';
+        font-weight: 400;
+        font-size: $mobile-subHeaderBody-font;
+        line-height: $mobile-subHeaderBody-lineHeight;
         @include tablet {
             padding: 2.5rem 0 4rem;
             width: 75%;
+            font-size: $normal-subHeaderBody-font;
+            line-height: $normal-subHeaderBody-lineHeight;
         }
     }
 }

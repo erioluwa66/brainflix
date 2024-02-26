@@ -12,11 +12,12 @@ function VideoDetail({ selected }) {
                     <h2 className="video-info__author">By {selected.channel}</h2>
                     <p className="video-info__date">{dateConvertor(selected.timestamp)}</p>
                 </div>
-                <div className="video-info__stats-wrapper">
-                    <img className="video-info__view-icon" src={ViewIcon} alt="view icon" />
-                    <p className="video-info__view-num">{selected.views}</p>
-                    <img className="video-info__like-icon" src={LikeIcon} alt="like icon" />
-                    <p className="video-info__like-num">{selected.likes}</p>
+                <div className="video-info__data">  
+                    <img className="video-info__data-icon" src={ViewIcon} alt="eye" />
+                    <p className="video-info__data-views">{selected.views}</p>            
+                    <img className="video-info__data-icon" src={LikeIcon} alt="heart" />
+                    <p className="video-info__data-views">{selected.likes}</p>
+                    
                 </div>
             </article>
             <p className="video-info__text">{selected.description}</p>
