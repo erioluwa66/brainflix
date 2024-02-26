@@ -20,6 +20,8 @@
         width: 7.5rem;
         height: 4.7rem;
         border-radius: 0.2rem;
+        object-fit: cover;
+        object-position: top;
     }
 
     &__container {

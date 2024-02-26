@@ -16,6 +16,7 @@
             &-left {
                 @include desktop {
                 width: 80%;
+                border-right: .0625rem solid $mercury;
                 }
             }
 
