@@ -5,17 +5,11 @@
 @use '../../styles/partials/global' as *;
 
 .video-list{
-    display: flex;
-    flex-direction: row;
-    margin-top: -3.8rem;
-    
-    @include desktop {
-        margin-top: -1.2rem
+    &__item {
+        display: flex;
+  
     }
-    
-
     &__image {
-        display: block;
         width: 7.5rem;
         height: 4.7rem;
         border-radius: 0.2rem;
