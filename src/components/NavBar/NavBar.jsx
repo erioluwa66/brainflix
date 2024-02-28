@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import searchIcon from "../../assets/icons/search.svg"
 import uploadIcon from "../../assets/icons/upload.svg"
 import profileImage from '../../assets/images/Mohan-muruge.jpg'
@@ -17,9 +18,10 @@ function NavBar({ handleSubmit }) {
                 <input className="navbar__input" type="text" name="search" placeholder="Search"/>
             </div>
             
-            <button className="navbar__submit" type="submit">UPLOAD</button>
-            <img className="navbar__submit-icon" src={uploadIcon} alt="upload icon"/>
-                  
+            <Link className="navbar__submit" to="/upload">
+                <img className="navbar__submit-icon" src={uploadIcon} alt="upload icon"/>
+                UPLOAD
+            </Link>    
             <div className="navbar__avatar-box">
                 <img className="navbar__avatar" src={profileImage} alt="Mogan muruge"/>
             </div>
