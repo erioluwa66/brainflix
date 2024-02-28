@@ -7,4 +7,8 @@ const dateConvertor = (timestamp) => {
     return `${day}/${month}/${year}`;
 };
 
+
+export const api_url = "https://unit-3-project-api-0a5620414506.herokuapp.com"
+export const api_key = "?bc6382eb-06d8-4d5e-8db7-70b405ec056d"
+
 export default dateConvertor;
