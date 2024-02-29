@@ -1,5 +1,6 @@
-import dateConvertor from "../../Utils";
 import './CommentCard.scss'
+import dateConvertor from '../../Utils/Utils';;
+
 
 //comment block constructor
 const CommentCard = ({commentData}) => {

@@ -21,15 +21,71 @@ function HomePage() {
         axios
             .get(`${api_url}/videos${api_key}`)
             .then(res => {
-                let selectedId = id ? id : res.data[0].id;
-                
+                setVideoData(res.data);
+                 // Fetch selected video detail based on id from URL
+                const selectedId = id ? id : res.data[0].id;  
+                return axios.get(`${api_url}/videos/${selectedId}${api_key}`); 
+
             })
-
-
-    }
+                .then(res => setSelected(res.data))
+                .catch(err => console.error(err));
+            }, [id]);// Trigger effect when id changes
     
-    
-    )
-}
+    useEffect(() => {
+        const selectedId = id ? id : videoData && videoData.length > 0 ? videoData[0].id : null;
+        if (selectedId) {
+            axios
+                .get(`${api_url}/videos/${selectedId}${api_key}`)
+                .then(res => setSelected(res.data))
+                .catch(err => console.error(err));
+        }
+    }, [id, videoData]);
 
+            const handleSubmit = (event) => {
+                event.preventDefault();
+                const newText = event.target.comment.value;
+                const userName = "Alya Mum";
+                axios
+                    .post(`{api_url}/videos/${selected.id}/comments${api_key}`,{
+                       "name": userName,
+                       "comment": newText, 
+                    })
+                    .then(res => {
+                        setSelected({ ...selected, comments: [res.data, ...selected.comments] });
+                    })
+                    .catch(err => console.log(err));
+                event.target.reset();
+                };
+
+            const handleDelete = (id) => {
+                axios
+                    .delete(`${api_url}/videos/${selected.id}/comments/${id}${api_key}`)
+                    .then(res => {
+                        const newComments = selected.comments.filter(comment => comment.id !== res.data.id);
+                        setSelected({ ...selected, comments: newComments });
+                    })
+                    .catch(err => console.log(err));
+                };
+                    
+            return (
+                selected ?
+                <>
+                    <section className="main__hero"><VideoPlayer selected={selected} /></section>
+                    <section main__body>
+                        <div className="main__body-left">
+                            <VideoDetail selected={selected} />
+                            <Comment selected={selected} handleSubmit={handleSubmit} handleDelete={handleDelete} />
+                        </div>
+                        <div className="main__body-right">
+                            <VideoList videoData={videoData} selected={selected}  />
+                        </div>             
+                    </section>
+                </>
+                :
+                <p>Loading...</p>
+            );
+
+     }
+                
+ 
 export default HomePage;
