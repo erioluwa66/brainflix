@@ -8,7 +8,7 @@ import Comment from '../../components/Comment/Comment';
 import { api_key, api_url } from "../../Utils/Utils";
 import axios from 'axios';
 
-import './HomePage.scss'
+import './HomePage.scss';
 
 
 
