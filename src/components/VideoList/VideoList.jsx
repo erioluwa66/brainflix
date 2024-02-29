@@ -1,29 +1,22 @@
+import { Link } from 'react-router-dom';
 import VideoListItem from '../VideoListItem/VideoListItem';
-import './VideoList.scss'
+import './VideoList.scss';
 
+function VideoList({ videos, selected }) {
+    // Filter out the selected video
+    const filteredVideos = Array.isArray(videos) ? videos.filter(video => video.id !== selected.id) :[]
 
-function VideoList( {videos, selected, handleClick} ) {
-    return(    
-       <aside className="video-list">   
-        <h2 className="video-list__tittle">NEXT VIDEOS</h2>
-          {videos.map((video) => {
-            if(video.id !== selected.id){
-              return (
-                <VideoListItem
-                  key={video.id}
-                  video={video}
-                  handleClick={() => handleClick(video.id)}
-                  />
-              );
-            } else {
-              return null
-            }
-          
-        })}  
-    </aside>
+    return (
+        <aside className="video-list">
+            <h2 className="video-list__title">NEXT VIDEOS</h2>
+            {/* Map through filtered videos */}
+            {filteredVideos.map(video => (
+                <Link className="video-list__link" to={`/${video.id}`} key={video.id}>
+                    <VideoListItem video={video} />
+                </Link>
+            ))}
+        </aside>
     );
 }
 
-
 export default VideoList;
-

@@ -1,4 +1,4 @@
-import dateConvertor from '../../Utils';
+import dateConvertor from '../../Utils/Utils';
 import ViewIcon from '../../assets/icons/views.svg';
 import LikeIcon from '../../assets/icons/likes.svg';
 import './VideoDetail.scss';
