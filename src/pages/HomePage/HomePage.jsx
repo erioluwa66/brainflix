@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer'
 import VideoList from '../../components/VideoList/VideoList'
-import VideoDetail from '../../components/VideoDetail/VideoDetail';
+import VideoDetail from '../../components/VideoDetail/VideoDetail'
 import Comment from '../../components/Comment/Comment';
 import { api_key, api_url } from "../../Utils/Utils";
 import axios from 'axios';
@@ -14,14 +14,14 @@ import './HomePage.scss';
 
 function HomePage() {
     const {id} = useParams()
-    const [Video, setVideo] = useState(null);
+    const [videoData, setVideoData] = useState(null);
     const [selected, setSelected] = useState(null);
 
     useEffect(() => {
         axios
             .get(`${api_url}/videos${api_key}`)
             .then(res => {
-                setVideo(res.data);
+                setVideoData(res.data);
                  // Fetch selected video detail based on id from URL
                 const selectedId = id ? id : res.data[0].id;  
                 return axios.get(`${api_url}/videos/${selectedId}${api_key}`); 
@@ -32,14 +32,14 @@ function HomePage() {
             }, [id]);// Trigger effect when id changes
     
     useEffect(() => {
-        const selectedId = id ? id : Video && Video.length > 0 ? Video[0].id : null;
+        const selectedId = id ? id : videoData && videoData.length > 0 ? videoData[0].id : null;
         if (selectedId) {
             axios
                 .get(`${api_url}/videos/${selectedId}${api_key}`)
                 .then(res => setSelected(res.data))
                 .catch(err => console.error(err));
         }
-    }, [id, Video]);
+    }, [id, videoData]);
 
             const handleSubmit = (event) => {
                 event.preventDefault();
@@ -77,7 +77,7 @@ function HomePage() {
                             <Comment selected={selected} handleSubmit={handleSubmit} handleDelete={handleDelete} />
                         </div>
                         <div className="main__body-right">
-                            <VideoList Video={Video} selected={selected}  />
+                            <VideoList videoData={videoData} selected={selected}  />
                         </div>             
                     </section>
                 </>

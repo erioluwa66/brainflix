@@ -10,17 +10,13 @@
 
         @include desktop {
             display: flex;
-            flex-direction: row;
         }
-
-
         &-left {
             @include desktop {
                 width: 80%;
                 border-right: .0625rem solid $mercury;
             }
         }
-
         &-right {
             @include desktop {
                 width: 20%;
