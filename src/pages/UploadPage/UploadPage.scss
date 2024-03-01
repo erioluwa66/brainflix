@@ -1,0 +1,168 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/global' as *;
+
+.upload{
+    position: relative;
+    @include combo-spacing;
+
+    @include tablet{
+        margin-bottom: 11rem;
+    }
+
+    @include desktop{
+        margin-bottom: 25rem;
+    }
+
+
+&__title{
+    padding: 1.5rem 0 2.5rem;
+
+    @include tablet{
+        border-bottom: $mercury;
+        padding-top: 3rem;
+    }
+}
+
+&__label{
+    font-size: $mobile-labelsButton-font;
+    font-family: "avenir";
+    font-weight: 600;
+    color: $silver;
+}
+&__thumbnail{
+    width: 100%;
+    margin-bottom: 2rem;
+
+}
+&__form{
+    @include flex-column;
+
+    @include tablet{
+        padding-top: 2.5rem;
+    }
+    @include desktop{
+        @include flex-row{
+            flex-wrap: wrap;
+        }
+    }
+        &-left {
+            @include tablet {
+                width: 60%;
+            }
+    
+            @include desktop {
+                width: 35%;
+            }
+        }
+    
+        &-right {
+            @include desktop {
+                margin-left: 1.5rem;
+                flex-grow: 2;
+            }
+        }
+        }
+        &__input,
+        &__textarea {
+            @include formfield;
+            margin-bottom: 1.5rem;
+            width: 100%;
+    
+            @include tablet {
+                width: 100%;
+            }
+        }
+    
+        &__textarea {
+            margin-bottom: 2rem;
+            height: 8.5rem;
+    
+            @include tablet {
+                margin-bottom: 2.5rem;
+            }
+        }
+    
+        &__action {
+            @include flex-column;
+    
+            @include tablet {
+                @include flex-row {
+                    gap: 2.5rem;
+                    flex-direction: row-reverse;
+                }
+    
+                border-top: $mercury;
+                padding-top: 2.5rem;
+            }
+    
+            @include desktop {
+                width: 100%;
+            }
+        }
+    
+        &__submit {
+            @include button;
+    
+            @include tablet {
+                width: 10rem;
+            }
+        }
+    
+        &__link {
+            text-decoration: none;
+            font-size: $mobile-labelsButton-font;
+            font-weight: 600;
+            font-family: 'avenir';
+            line-height: $mobile-labelsButton-lineHeight;
+            color: $brainflix-black;
+            margin: 1.5rem, auto;
+    
+            @include tablet {
+                margin: auto 0;
+            }
+        }
+    
+    }
+    
+.loading {
+
+    &::before {
+    content: "";
+    background-color: $white;
+    color: $brainflix-black;
+    opacity: 0.6;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    animation: loading 1s;
+    }
+    
+    &::after {
+    content: "Uploading...";
+    color: $brainflix-black;
+    font-size: $normal-pageheader-font;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 50%; 
+    }
+    
+    @keyframes loading {
+            0% {
+                opacity: 0;
+            }
+    
+            100% {
+                opacity: 0.6;
+            }
+        }
+    }
+    
+        
