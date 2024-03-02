@@ -4,7 +4,7 @@ import NavBar from "../NavBar/NavBar"
 import './Header.scss'
 
 //navbar
-function Header({update}) {
+function Header() {
     
     return(
         <header className="header">
@@ -12,7 +12,7 @@ function Header({update}) {
             <img className="header__logo"  src={logo} alt = "Brainflix logo"/>
             </Link>
          <NavBar/>   
-    </header>
+        </header>
     )
 }
 export default Header
