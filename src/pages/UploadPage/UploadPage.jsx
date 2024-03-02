@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import './UploadPage.scss';
 
@@ -7,6 +7,8 @@ import './UploadPage.scss';
 function UploadPage(props) {
     // Using useState hook to manage state
     const [submit, setSubmit] = useState(false);
+
+    const navigate = useNavigate()
 
     // Function to handle form submission
     const handleSubmit = (e) => {
@@ -17,8 +19,8 @@ function UploadPage(props) {
         setTimeout(() => {
             alert("Uploaded!"); // Alert uploaded message
             // Redirect to home page using history object from props
-            props.history.push('/');
-        }, 3000);
+            navigate('/');
+        }, 1000);
     };
 
     return (

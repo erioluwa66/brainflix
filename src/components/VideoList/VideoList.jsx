@@ -9,7 +9,7 @@ function VideoList({ videoData, selected }) {
         <section className="video-list">
             <h2 className="video-list__title">NEXT VIDEO</h2>
             {filteredVideos.map(video => (
-                <Link className="video-list__link" to={`/${video.id}`} key={video.id}>
+                <Link className="video-list__link" to={`/video/${video.id}`} key={video.id}>
                     <VideoListItem videoData={video} />
                 </Link>
             ))}
