@@ -7,6 +7,7 @@
 .upload{
     position: relative;
     @include combo-spacing;
+    border-top: .0625rem solid $mercury;
 
     @include tablet{
         margin-bottom: 11rem;
@@ -17,20 +18,35 @@
     }
 
 
-&__title{
-    padding: 1.5rem 0 2.5rem;
+&__header{
+    padding: 0.5rem 0 2.5rem;
+    font-family: "avenir";
+    font-weight: 700;
+    font-size: $mobile-pageheader-font;
+    line-height: $mobile-pageheader-lineHeight; 
 
     @include tablet{
-        border-bottom: $mercury;
         padding-top: 3rem;
+        font-size: $normal-pageheader-font;
+        line-height: $normal-pageheader-lineHeight;
+        margin-top: -1rem
     }
 }
 
 &__label{
     font-size: $mobile-labelsButton-font;
     font-family: "avenir";
+    font-size: $mobile-sectionHeader-font;
+    line-height: $mobile-sectionHeader-lineHeight;
     font-weight: 600;
+    margin-top: -2.5rem;
     color: $silver;
+    @include tablet {
+        font-size: $normal-sectionHeader-font;
+        line-height: $normal-sectionHeader-lineHeight;
+        margin-top: -4rem;
+
+    }
 }
 &__thumbnail{
     width: 100%;
@@ -115,6 +131,7 @@
             text-decoration: none;
             font-size: $mobile-labelsButton-font;
             font-weight: 600;
+            text-align: center;
             font-family: 'avenir';
             line-height: $mobile-labelsButton-lineHeight;
             color: $brainflix-black;

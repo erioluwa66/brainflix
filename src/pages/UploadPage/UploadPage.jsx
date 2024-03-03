@@ -25,7 +25,7 @@ function UploadPage(props) {
 
     return (
         <section className={"upload " + (submit ? "loading" : "")}>
-            <h1 className="upload__title">Upload Video</h1>
+            <h1 className="upload__header">Upload Video</h1>
             {/* Form element with onSubmit event handler */}
             <form className="upload__form" onSubmit={handleSubmit}>
                 <div className="upload__form-left">
