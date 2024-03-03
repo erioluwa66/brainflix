@@ -5,7 +5,7 @@ import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import './UploadPage.scss';
 
 // Functional component UploadPage
-function UploadPage(props) {
+function UploadPage(data) {
     // Using useState hook to manage state
     const [submit, setSubmit] = useState(false);
 
@@ -18,14 +18,14 @@ function UploadPage(props) {
         setSubmit(true);
         // Set timeout to simulate upload process
         setTimeout(() => {
-            alert("Uploaded!"); // Alert uploaded message
-            // Redirect to home page using history object from props
+            alert("Successful!"); // Alert uploaded message
+            // Redirect to home page using history object from data
             navigate('/');
         }, 1000);
     };
 
     return (
-        <section className={"upload " + (submit ? "loading" : "")}>
+        <section className={"upload " + (submit ? "updating" : "")}>
             <h1 className="upload__header">Upload Video</h1>
             {/* Form element with onSubmit event handler */}
             <form className="upload__form" onSubmit={handleSubmit}>
