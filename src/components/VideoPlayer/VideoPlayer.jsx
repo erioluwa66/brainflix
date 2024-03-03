@@ -1,10 +1,10 @@
 import './VideoPlayer.scss'
 
-function VideoPlayer({ selected }) {
+function VideoPlayer({ clicked }) {
     return (
         <div className="video-player__container">
-            <video className="video-player__editor" poster={selected.image} controls>
-                <source src={selected.video} type="video/mp4"/>
+            <video className="video-player__editor" poster={clicked.image} controls>
+                <source src={clicked.video} type="video/mp4"/>
             </video>
         </div>
     );

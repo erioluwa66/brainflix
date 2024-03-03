@@ -15,28 +15,28 @@ import './HomePage.scss';
 function HomePage() {
     const {id} = useParams()
     const [videoData, setVideoData] = useState(null);
-    const [selected, setSelected] = useState(null);
+    const [clicked, setClicked] = useState(null);
 
     useEffect(() => {
         axios
             .get(`${api_url}/videos${api_key}`)
             .then(res => {
                 setVideoData(res.data);
-                 // Fetch selected video detail based on id from URL
-                const selectedId = id ? id : res.data[0].id;  
-                return axios.get(`${api_url}/videos/${selectedId}${api_key}`); 
+                 // Fetch clicked video detail based on id from URL
+                const clickedId = id ? id : res.data[0].id;  
+                return axios.get(`${api_url}/videos/${clickedId}${api_key}`); 
 
             })
-                .then(res => setSelected(res.data))
+                .then(res => setClicked(res.data))
                 .catch(err => console.error(err));
             }, [id]);// Trigger effect when id changes
     
     useEffect(() => {
-        const selectedId = id ? id : videoData && videoData.length > 0 ? videoData[0].id : null;
-        if (selectedId) {
+        const clickedId = id ? id : videoData && videoData.length > 0 ? videoData[0].id : null;
+        if (clickedId) {
             axios
-                .get(`${api_url}/videos/${selectedId}${api_key}`)
-                .then(res => setSelected(res.data))
+                .get(`${api_url}/videos/${clickedId}${api_key}`)
+                .then(res => setClicked(res.data))
                 .catch(err => console.error(err));
         }
     }, [id, videoData]);
@@ -46,12 +46,12 @@ function HomePage() {
                 const newText = event.target.comment.value;
                 const userName = "Alya Mum";
                 axios
-                    .post(`{api_url}/videos/${selected.id}/comments${api_key}`,{
+                    .post(`{api_url}/videos/${clicked.id}/comments${api_key}`,{
                        "name": userName,
                        "comment": newText, 
                     })
                     .then(res => {
-                        setSelected({ ...selected, comments: [res.data, ...selected.comments] });
+                        setClicked({ ...clicked, comments: [res.data, ...clicked.comments] });
                     })
                     .catch(err => console.log(err));
                 event.target.reset();
@@ -59,30 +59,30 @@ function HomePage() {
 
             const handleDelete = (id) => {
                 axios
-                    .delete(`${api_url}/videos/${selected.id}/comments/${id}${api_key}`)
+                    .delete(`${api_url}/videos/${clicked.id}/comments/${id}${api_key}`)
                     .then(res => {
-                        const newComments = selected.comments.filter(comment => comment.id !== res.data.id);
-                        setSelected({ ...selected, comments: newComments });
+                        const newComments = clicked.comments.filter(comment => comment.id !== res.data.id);
+                        setClicked({ ...clicked, comments: newComments });
                     })
                     .catch(err => console.log(err));
                 };
                     
             return (
-                selected ?
+                clicked ?
                 <>
-                    <section className="main__hero"><VideoPlayer selected={selected} /></section>
+                    <section className="main__hero"><VideoPlayer clicked={clicked} /></section>
                     <section className="main__body">
                         <div className="main__body-left">
-                            <VideoInfo selected={selected} />
-                            <Comment selected={selected} handleSubmit={handleSubmit} handleDelete={handleDelete} />
+                            <VideoInfo clicked={clicked} />
+                            <Comment clicked={clicked} handleSubmit={handleSubmit} handleDelete={handleDelete} />
                         </div>
                         <div className="main__body-right">
-                            <VideoList videoData={videoData} selected={selected}  />
+                            <VideoList videoData={videoData} clicked={clicked}  />
                         </div>             
                     </section>
                 </>
                 :
-                <p>Loading...</p>
+                <p>In progess ...</p>
             );
 
      }
