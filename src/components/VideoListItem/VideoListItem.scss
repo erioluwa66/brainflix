@@ -14,17 +14,21 @@
         height: 4.7rem;
         border-radius: 0.2rem;
         object-fit: cover;
-        object-position: top;
+        background-color: $mercury;
+        margin: 0.8rem 0rem;
     }
 
     &__container {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-left: 0.5rem;
     }
-    &__author {
+    &__author-name {
         font-family: "avenir";
         font-weight: 400;
+        color: $brainflix-black;
         font-size: $mobile-labelsButton-font;
         line-height: $mobile-labelsButton-lineHeight
     }
@@ -33,9 +37,10 @@
         line-height: $normal-labelsButton-lineHeight;
     }
 
-    &__title {
+    &__name {
         font-family: "avenir";
-        font-weight: 400;
+        font-weight: 600;
+        color: $brainflix-darkblack;
         font-size: $mobile-labelsButton-font;
         line-height: $mobile-labelsButton-lineHeight
          }
