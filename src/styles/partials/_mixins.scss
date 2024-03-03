@@ -31,6 +31,7 @@
 @mixin button {
     font-size: $mobile-labelsButton-font;
     font-weight: 600;
+    font-family: "avenir";
     line-height: $mobile-labelsButton-lineHeight;
     text-align: center;
     height: 2.5rem;
@@ -91,9 +92,10 @@
     border: 0.15rem solid $mercury;
     border-radius: 0.25rem;
     padding: .75rem;
+    font-family: "avenir";
     background-color: $alabaster;
     font-size: $mobile-subHeaderBody-font;
-    font-weight: $regular;
+    font-weight: 400;
     line-height: $mobile-subHeaderBody-lineHeight;
 
     &::placeholder {

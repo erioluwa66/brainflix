@@ -117,23 +117,33 @@
             }
         }
     
-        &__submit {
+        &__publish {
             @include button;
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            text-decoration: none;
     
             @include tablet {
                 width: 10rem;
             }
+                &-icon {
+                    margin-right: 3.5rem;  
+                    @include tablet {
+                    margin-right: 4rem;
+                            }
+                        }
         }
     
-        &__link {
+        &__cancel {
             text-decoration: none;
             font-size: $mobile-labelsButton-font;
             font-weight: 600;
             text-align: center;
-            font-family: 'avenir';
+            font-family: "avenir";
             line-height: $mobile-labelsButton-lineHeight;
-            color: $brainflix-black;
-            margin: 1.5rem, auto;
+            color: $brainflix-blue;
+            padding-top: 1.5rem;
     
             @include tablet {
                 margin: auto 0;

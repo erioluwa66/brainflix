@@ -73,9 +73,11 @@
 
     &__avatar-box {
         @include avatar;
-        margin-top: -0.5rem;     
+        margin-top: -3rem; 
+        margin-left: -1.2rem;    
         @include tablet {
             margin-top: 0.8rem;
+            margin-left: 0rem;
     
         }
     }

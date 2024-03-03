@@ -44,12 +44,12 @@ function UploadPage(props) {
                 </div>
                 <div className="upload__action">
                     {/* Button to submit form */}
-                    <button className="upload__submit">
+                    <button className="upload__publish">
                      <img className="upload__publish-icon" src={publishIcon} alt="publish icon"/> 
                      PUBLISH  
                     </button>
                     {/* Link to cancel upload and go back to home page */}
-                    <Link className="upload__link" to="/cancel">CANCEL</Link>
+                    <Link className="upload__cancel" to="/cancel">CANCEL</Link>
                 </div>
             </form>
         </section>
