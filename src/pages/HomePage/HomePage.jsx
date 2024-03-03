@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer'
 import VideoList from '../../components/VideoList/VideoList'
-import VideoDetail from '../../components/VideoDetail/VideoDetail'
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import Comment from '../../components/Comment/Comment';
 import { api_key, api_url } from "../../Utils/Utils";
 import axios from 'axios';
@@ -73,7 +73,7 @@ function HomePage() {
                     <section className="main__hero"><VideoPlayer selected={selected} /></section>
                     <section className="main__body">
                         <div className="main__body-left">
-                            <VideoDetail selected={selected} />
+                            <VideoInfo selected={selected} />
                             <Comment selected={selected} handleSubmit={handleSubmit} handleDelete={handleDelete} />
                         </div>
                         <div className="main__body-right">

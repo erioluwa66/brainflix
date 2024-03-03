@@ -24,21 +24,19 @@
 
     &__detail {
         display: flex;
-        flex-direction: row;
+        justify-content: flex-start;
         font-family: 'avenir';
         font-weight: 400;
         font-size: $mobile-subHeaderBody-font;
         line-height: $mobile-subHeaderBody-lineHeight;
-        margin-top: 1rem; 
-        border-top: 0.5px solid $silver;
-        border-bottom: 0.5px solid $silver;
+        border-top: 0.5px solid $mercury; 
         
         @include tablet {
             @include flex-row {
                 flex-wrap: wrap;
                 justify-content: space-between;
             }
-                margin-top: -2rem;
+                margin-top: -2.5rem;
                 font-size: $normal-subHeaderBody-font;
                 line-height: $normal-subHeaderBody-lineHeight;
                 border-top: 0rem;
@@ -61,7 +59,7 @@
         font-size: $mobile-sectionHeader-font;
         line-height: $mobile-sectionHeader-lineHeight;
         font-family: "avenir";
-        font-weight: 700;
+        font-weight: 600;
         @include tablet {
             font-size: $normal-sectionHeader-font;
             line-height: $normal-sectionHeader-lineHeight;
@@ -70,19 +68,27 @@
 
     &__date {
         color: $silver;
+        @include tablet {
+            margin-left: 1.2rem
+        }
+       
    }
     &__data {
         display: flex;
+        flex-direction: column;
         padding-bottom: 1.5rem;
-        //justify-content: space-between;
         @include tablet {
             @include flex-row {
                 align-items: center;
             }
             padding-bottom: 0rem;
         }
+        &-block {
+            display: flex;
+            
+        }
     
-            &-views {
+            &--views {
             color: $silver;
             @include tablet {
             margin-right: 2rem;
@@ -92,13 +98,15 @@
 
     &__text {
         padding: 1.5rem 0 2.5rem;
-        margin-top: -0.5rem;
+        margin-top: -1.5rem;
+        border-top: 1px solid $mercury;
         font-family: 'avenir';
         font-weight: 400;
         font-size: $mobile-subHeaderBody-font;
         line-height: $mobile-subHeaderBody-lineHeight;
         @include tablet {
             padding: 2.5rem 0 4rem;
+            border-top: 0rem;
             width: 75%;
             font-size: $normal-subHeaderBody-font;
             line-height: $normal-subHeaderBody-lineHeight;
