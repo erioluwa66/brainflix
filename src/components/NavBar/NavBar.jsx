@@ -14,8 +14,8 @@ function NavBar() {
                 <input className="navbar__input" type="text" name="search" placeholder="Search"/>
             </div>
             
-            <Link className="navbar__submit" to="/upload">
-                <img className="navbar__submit-icon" src={uploadIcon} alt="upload icon"/>
+            <Link className="navbar__upload" to="/upload">
+                <img className="navbar__upload-icon" src={uploadIcon} alt="upload icon"/>
                 UPLOAD
             </Link>    
             <div className="navbar__avatar-box">

@@ -24,7 +24,6 @@
     font-weight: 700;
     font-size: $mobile-pageheader-font;
     line-height: $mobile-pageheader-lineHeight; 
-
     @include tablet{
         padding-top: 3rem;
         font-size: $normal-pageheader-font;
@@ -34,7 +33,6 @@
 }
 
 &__label{
-    font-size: $mobile-labelsButton-font;
     font-family: "avenir";
     font-size: $mobile-sectionHeader-font;
     line-height: $mobile-sectionHeader-lineHeight;
@@ -51,7 +49,6 @@
 &__thumbnail{
     width: 100%;
     margin-bottom: 2rem;
-
 }
 &__form{
     @include flex-column;
@@ -86,6 +83,7 @@
             @include formfield;
             margin-bottom: 1.5rem;
             width: 100%;
+            
     
             @include tablet {
                 width: 100%;

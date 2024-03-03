@@ -48,14 +48,14 @@
             line-height: $normal-labelsButton-lineHeight;
         }
     }
-    &__submit-icon {
+    &__upload-icon {
         margin-right: 3.5rem;
 
         @include tablet {
             margin-right: 4rem;
         }
     }
-    &__submit {
+    &__upload {
         @include button;
         display: flex;
         flex-direction: row;

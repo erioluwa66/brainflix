@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import publishIcon from '../../assets/icons/publish.svg'
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import './UploadPage.scss';
 
@@ -43,12 +44,16 @@ function UploadPage(props) {
                 </div>
                 <div className="upload__action">
                     {/* Button to submit form */}
-                    <button className="upload__submit">PUBLISH</button>
+                    <button className="upload__submit">
+                     <img className="upload__publish-icon" src={publishIcon} alt="publish icon"/> 
+                     PUBLISH  
+                    </button>
                     {/* Link to cancel upload and go back to home page */}
-                    <Link className="upload__link" to="/">CANCEL</Link>
+                    <Link className="upload__link" to="/cancel">CANCEL</Link>
                 </div>
             </form>
         </section>
+
     );
 }
 
