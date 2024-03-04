@@ -49,6 +49,9 @@
 &__thumbnail{
     width: 100%;
     margin-bottom: 2rem;
+    @include desktop {
+        padding-bottom: 3rem;
+    }
 }
 &__form{
     @include flex-column;
@@ -130,9 +133,9 @@
                 &-icon {
                     margin-right: 3.5rem;  
                     @include tablet {
-                    margin-right: 4rem;
-                            }
-                        }
+                    margin-left: -2rem;
+                }
+            }
         }
     
         &__cancel {
@@ -153,30 +156,38 @@
     }
     
 .updating {
+    position: relative;
+    z-index: 1;      
 
     &::before {
-    content: "";
-    background-color: $white;
-    color: $brainflix-black;
-    opacity: 0.4;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    animation: loading 1s;
-    }
+        content: "";       
+        background-color: rgba(255, 255, 255, 0.4);        
+        position: absolute;        
+        top: 0;     
+        left: 0;     
+        width: 100%;      
+        height: 100%;   
+        animation: loading 1s infinite;           
+    } 
     
     &::after {
-    content: "Updating...";
-    color: $brainflix-black;
-    width: 100%;
-    height: 100%;
-    font-size: $normal-pageheader-font;
-    position: absolute; 
-    text-align: center;
-    top: 50%; 
-    }
-}
-    
-        
+        content: "Updating...";        
+        color: $brainflix-black;      
+        position: absolute;      
+        top: 50%;  
+        left: 50%;      
+        transform: translate(-50%, -50%);     
+        font-size: $normal-pageheader-font;      
+        }
+    }    
+@keyframes loading {
+ 0% {
+     opacity: 0.4;
+    }            
+50% {
+     opacity: 0.8;
+    }        
+100% {
+    opacity: 0.4;
+    }        
+ }
