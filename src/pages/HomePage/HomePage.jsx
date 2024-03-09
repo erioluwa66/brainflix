@@ -19,12 +19,12 @@ function HomePage() {
 
     useEffect(() => {
         axios
-            .get(`${api_url}/videos${api_key}`)
+            .get(`${api_url}/videos`)
             .then(res => {
                 setVideoData(res.data);
                  // Fetch clicked video detail based on id from URL
                 const clickedId = id ? id : res.data[0].id;  
-                return axios.get(`${api_url}/videos/${clickedId}${api_key}`); 
+                return axios.get(`${api_url}/videos/${clickedId}`); 
 
             })
                 .then(res => setClicked(res.data))
@@ -35,7 +35,7 @@ function HomePage() {
         const clickedId = id ? id : videoData && videoData.length > 0 ? videoData[0].id : null;
         if (clickedId) {
             axios
-                .get(`${api_url}/videos/${clickedId}${api_key}`)
+                .get(`${api_url}/videos/${clickedId}`)
                 .then(res => setClicked(res.data))
                 .catch(err => console.error(err));
         }
