@@ -11,6 +11,7 @@ function UploadPage(data) {
     // Using useState hook to manage state
     const [submit, setSubmit] = useState(false);
     const navigate = useNavigate()
+    const DEFAULT_THUMBNAIL_PATH = '../../assets/images/Upload-video-preview.jpg';
 
     // Function to handle form submission
    const handleSubmit = async (event) => {
@@ -19,12 +20,11 @@ function UploadPage(data) {
         const newVideo = {
             title: formData.get('title'),
             description: formData.get('description'),
-            thumbnail: '../../assets/images/Upload-video-preview.jpg'
+            thumbnail: DEFAULT_THUMBNAIL_PATH // Use the default thumbnail image path
         };
 
         try {
             setSubmit(true);
-            console.log('API URL:', api_url);
             await axios.post(`${api_url}/videos`, newVideo);
             setTimeout(() => {
                 alert('Video uploaded successfully!');
@@ -52,7 +52,7 @@ function UploadPage(data) {
                     <input className="upload__input" name="title" id='title' placeholder="Add a title to your video" required />
                     {/* Label and textarea for video description */}
                     <label className="upload__label" htmlFor="text">ADD A VIDEO DESCRIPTION</label>
-                    <textarea className="upload__textarea" name="text" id='text' placeholder="Add a description to your video" required />
+                    <textarea className="upload__textarea" name="description" id="description" placeholder="Add a description to your video" required />
                 </div>
                 <div className="upload__action">
                     {/* Button to submit form */}
