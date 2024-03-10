@@ -37,10 +37,10 @@ function UploadPage(data) {
                 <div className="upload__form-right">
                     {/* Label and input field for video title */}
                     <label className="upload__label" htmlFor="title">TITLE YOUR VIDEO</label>
-                    <input className="upload__input" name="title" placeholder="Add a title to your video" required />
+                    <input className="upload__input" name="title" id='title' placeholder="Add a title to your video" required />
                     {/* Label and textarea for video description */}
                     <label className="upload__label" htmlFor="text">ADD A VIDEO DESCRIPTION</label>
-                    <textarea className="upload__textarea" name="text" placeholder="Add a description to your video" required />
+                    <textarea className="upload__textarea" name="text" id='text' placeholder="Add a description to your video" required />
                 </div>
                 <div className="upload__action">
                     {/* Button to submit form */}
@@ -49,7 +49,7 @@ function UploadPage(data) {
                      PUBLISH  
                     </button>
                     {/* Link to cancel upload and go back to home page */}
-                    <Link className="upload__cancel" to="/cancel">CANCEL</Link>
+                    <Link className="upload__cancel" to="/">CANCEL</Link>
                 </div>
             </form>
         </section>

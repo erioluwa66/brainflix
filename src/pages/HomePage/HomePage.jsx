@@ -1,11 +1,11 @@
-import "./HomePage.scss";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer'
 import VideoList from '../../components/VideoList/VideoList'
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import Comment from '../../components/Comment/Comment';
-import { api_key, api_url } from "../../Utils/Utils";
+import {  api_url } from "../../Utils/Utils";
 import axios from 'axios';
 
 import './HomePage.scss';
@@ -41,30 +41,32 @@ function HomePage() {
         }
     }, [id, videoData]);
 
-            const handleSubmit = (event) => {
-                event.preventDefault();
-                const newText = event.target.comment.value;
-                const userName = "Alya Mum";
-                axios
-                    .post(`{api_url}/videos/${clicked.id}/comments${api_key}`,{
-                       "name": userName,
-                       "comment": newText, 
-                    })
-                    .then(res => {
-                        setClicked({ ...clicked, comments: [res.data, ...clicked.comments] });
-                    })
-                    .catch(err => console.log(err));
-                event.target.reset();
-                };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const newText = event.target.comment.value;
+        const userName = "Alya Mum";
+        axios
+            .post(`${api_url}/videos/${clicked.id}/comments`,{
+                "name": userName,
+                "id":uuidv4(),
+                "comment": newText,
+                "timestamp":Date.now() 
+            })
+            .then(res => {
+                setClicked({ ...clicked, comments: [res.data, ...clicked.comments] });
+            })
+            .catch(err => console.log(err));
+        event.target.reset();
+        };
 
-            const handleDelete = (id) => {
-                axios
-                    .delete(`${api_url}/videos/${clicked.id}/comments/${id}${api_key}`)
-                    .then(res => {
-                        const newComments = clicked.comments.filter(comment => comment.id !== res.data.id);
-                        setClicked({ ...clicked, comments: newComments });
-                    })
-                    .catch(err => console.log(err));
+    const handleDelete = (id) => {
+        axios
+            .delete(`${api_url}/videos/${clicked.id}/comments/${id}`)
+            .then(res => {
+            const newComments = clicked.comments.filter(comment => comment.id !== res.data.id);
+                setClicked({ ...clicked, comments: newComments });
+                })
+                .catch(err => console.log(err));
                 };
                     
             return (
@@ -85,7 +87,6 @@ function HomePage() {
                 <p>In progess ...</p>
             );
 
-     }
-                
+     }             
  
 export default HomePage;
