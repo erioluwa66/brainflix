@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'
+import {  api_url } from "../../Utils/Utils";
 import publishIcon from '../../assets/icons/publish.svg'
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import './UploadPage.scss';
@@ -8,20 +10,30 @@ import './UploadPage.scss';
 function UploadPage(data) {
     // Using useState hook to manage state
     const [submit, setSubmit] = useState(false);
-
     const navigate = useNavigate()
 
     // Function to handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Set submit state to true
-        setSubmit(true);
-        // Set timeout to simulate upload process
-        setTimeout(() => {
-            alert("Successful!"); // Alert uploaded message
-            // Redirect to home page using history object from data
-            navigate('/');
-        }, 1000);
+   const handleSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const newVideo = {
+            title: formData.get('title'),
+            description: formData.get('description'),
+            thumbnail: '../../assets/images/Upload-video-preview.jpg'
+        };
+
+        try {
+            setSubmit(true);
+            console.log('API URL:', api_url);
+            await axios.post(`${api_url}/videos`, newVideo);
+            setTimeout(() => {
+                alert('Video uploaded successfully!');
+                navigate('/');
+            }, 1000); // Set delay for 1 second
+        } catch (error) {
+            console.error('Error uploading video:', error);
+            alert('Failed to upload video. Please try again later.');
+        }
     };
 
     return (
