@@ -11,7 +11,7 @@ function NavBar() {
             <div className="navbar__input-container">
                 <img alt="magnifier" className="navbar__search-icon" src={searchIcon} />
                 <label className="navbar__label" htmlFor="search"></label>
-                <input className="navbar__input" type="text" name="search" placeholder="Search"/>
+                <input className="navbar__input" id="search" name="search" placeholder="Search"/>
             </div>
             
             <Link className="navbar__upload" to="/upload">
