@@ -28,7 +28,11 @@
         padding-top: 3rem;
         font-size: $normal-pageheader-font;
         line-height: $normal-pageheader-lineHeight;
-        margin-top: -1rem
+        margin-top: -1rem;
+        border-bottom: 1px solid $mercury;
+    }
+    @include desktop {
+        border-bottom: 2px solid $mercury;
     }
 }
 
@@ -43,6 +47,7 @@
         font-size: $normal-sectionHeader-font;
         line-height: $normal-sectionHeader-lineHeight;
         margin-top: -4rem;
+        
 
     }
 }
@@ -78,6 +83,7 @@
             @include desktop {
                 margin-left: 1.5rem;
                 flex-grow: 2;
+                margin-top: -3rem
             }
         }
         }
@@ -85,6 +91,7 @@
         &__textarea {
             @include formfield;
             padding: 0rem;
+            padding-left: 0.5rem;
             margin-bottom: 1.5rem;
             width: 100%;
             
@@ -101,6 +108,9 @@
             @include tablet {
                 margin-bottom: 2.5rem;
             }
+            @include desktop {
+                height: 3rem;
+            }
         }
     
         &__action {
@@ -112,32 +122,53 @@
                     flex-direction: row-reverse;
                 }
     
-                border-top: $mercury;
+                border-top: 1px solid $mercury;
                 padding-top: 2.5rem;
             }
     
             @include desktop {
                 width: 100%;
+                margin-top: -3.5rem;
             }
         }
-    
+        &__publish-icon {
+            margin-right: 3.5rem;    
+            @include tablet {
+            margin-right: 4rem;
+            }
+        }
         &__publish {
             @include button;
             display: flex;
             flex-direction: row;
-            align-content: space-between;
+            align-items: center;
+            margin: 0 0.5rem 0.5rem 0rem;
             text-decoration: none;
-    
+            width: 100%;
+        
             @include tablet {
-                width: 10rem;
-            }
-                &-icon {
-                    margin-right: 3.5rem;  
-                    @include tablet {
-                    margin-left: -2rem;
-                }
+            width: auto;
+            margin-top: 0.9rem;
+      
             }
         }
+        // &__publish {
+        //     display: flex;
+        //     flex-direction: row;
+        //     align-content: space-between;
+        //     text-decoration: none;
+    
+        //     @include tablet {
+        //         width: 10rem;
+        //     }
+        //         &-icon {
+        //             color: white;
+        //             margin-right: 3.5rem;  
+        //             @include tablet {
+        //             margin-left: -2rem;
+        //         }
+        //     }
+        // }
     
         &__cancel {
             text-decoration: none;
